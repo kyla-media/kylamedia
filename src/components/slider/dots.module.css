@@ -1,0 +1,69 @@
+/* Each dot has a 24 px tap area; the visible dot is 8 px. */
+.dots {
+  --step: 24px;
+  --dot: 8px;
+  --inset: calc((var(--step) - var(--dot)) / 2);
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.row {
+  position: relative;
+  display: flex;
+}
+
+.dot {
+  width: var(--step);
+  height: var(--step);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* Inactive dots are outlined, the active one is filled by the worm: not colour alone. */
+.dot span {
+  width: var(--dot);
+  height: var(--dot);
+  border-radius: 50%;
+  border: 1.5px solid var(--muted);
+  transform: scale(var(--k, 1));
+}
+
+.dot:hover span {
+  border-color: var(--ink);
+}
+
+.worm {
+  position: absolute;
+  top: var(--inset);
+  height: var(--dot);
+  left: calc(var(--lo) * var(--step) + var(--inset));
+  right: calc(var(--hi) * var(--step) + var(--inset));
+  border-radius: 999px;
+  background: var(--accent);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dot span {
+    transition: transform var(--t-hover) var(--ease-out);
+  }
+
+  /* The leading edge moves first, the tail follows: the worm stretches, then settles. */
+  .worm[data-dir="next"] {
+    transition:
+      right 220ms var(--ease-out),
+      left 220ms var(--ease-out) 110ms;
+  }
+
+  .worm[data-dir="back"] {
+    transition:
+      left 220ms var(--ease-out),
+      right 220ms var(--ease-out) 110ms;
+  }
+}

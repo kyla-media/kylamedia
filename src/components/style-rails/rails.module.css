@@ -1,0 +1,119 @@
+.stage {
+  border-top: 2px solid var(--ink);
+  padding-top: 22px;
+  margin-bottom: 40px;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 30px;
+  margin-bottom: 18px;
+}
+
+.head h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 44px;
+  font-weight: 900;
+  font-stretch: 70%;
+  line-height: 1;
+}
+
+.head h3 small {
+  font: 600 15px var(--body);
+  color: var(--muted);
+}
+
+.job {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 30em;
+}
+
+.card {
+  display: grid;
+  gap: 3px;
+  font-size: 14px;
+}
+
+.card :global(.phone-v) {
+  margin-bottom: 8px;
+  border-radius: 14px;
+}
+
+.card b {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.line {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.slot {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--surface) 0 10px,
+    color-mix(in srgb, var(--line) 55%, var(--surface)) 10px 11px
+  );
+}
+
+.slot span {
+  font: 600 12px var(--body);
+  color: var(--muted);
+  border: 1px dashed var(--muted);
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: var(--surface);
+}
+
+.pin {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+}
+
+.also {
+  margin-top: 30px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.also b {
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Pose to pose: rest and hover. The video inside lags behind its frame (follow-through). */
+  .card :global(.phone-v) {
+    transition:
+      transform var(--t-hover) var(--ease-out),
+      box-shadow var(--t-hover) var(--ease-out);
+  }
+
+  .card video,
+  .slot {
+    transition: transform 600ms var(--ease-out);
+  }
+
+  .card:hover :global(.phone-v) {
+    transform: translateY(-3px);
+    box-shadow:
+      0 0 0 1px var(--line),
+      0 22px 40px -22px #000a;
+  }
+
+  .card:hover video,
+  .card:hover .slot {
+    transform: scale(1.04);
+  }
+}

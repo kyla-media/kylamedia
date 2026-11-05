@@ -1,0 +1,100 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 15px 18px 15px 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.table thead th {
+  font: 700 12px var(--body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 2px solid var(--ink);
+}
+
+.table thead th.us {
+  color: var(--accent);
+}
+
+.table tbody th {
+  font-weight: 600;
+  width: 30%;
+}
+
+.table td {
+  color: var(--muted);
+}
+
+.table td.us {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+/* Narrow screens: each row becomes a small card, so the table never scrolls sideways. */
+@container site (max-width: 600px) {
+  .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table th,
+  .table td {
+    display: block;
+    width: auto;
+  }
+
+  .table tr {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .table tbody th,
+  .table td {
+    padding: 0;
+    border: 0;
+  }
+
+  .table tbody th {
+    width: auto;
+    margin-bottom: 10px;
+  }
+
+  .table td + td {
+    margin-top: 8px;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    display: block;
+    font: 700 11px var(--body);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .table td.us::before {
+    color: var(--accent);
+  }
+}

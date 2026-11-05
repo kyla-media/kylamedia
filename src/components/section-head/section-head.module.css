@@ -1,0 +1,19 @@
+.head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 48px;
+  align-items: end;
+  margin-bottom: 44px;
+}
+
+.head p {
+  color: var(--muted);
+  max-width: 34em;
+}
+
+@container site (max-width: 760px) {
+  .head {
+    grid-template-columns: 1fr;
+    margin-bottom: 32px;
+  }
+}

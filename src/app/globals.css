@@ -1,0 +1,108 @@
+/* Tokens and base. Headlines are set like on-video captions; the funnel is the spine. */
+:root {
+  --paper: #f6f4f5;
+  --surface: #ffffff;
+  --ink: #17131a;
+  --muted: #675f6b;
+  --line: #e2dce1;
+  --accent: #dc2f68;
+  --on-accent: #ffffff;
+  --night: #141016;
+  --night-ink: #f3eef2;
+  --night-muted: #a69ca9;
+  --error: #c21d3b;
+  --display: var(--font-archivo), "Arial Narrow", Arial, sans-serif;
+  --body: var(--font-figtree), "Segoe UI", Arial, sans-serif;
+  --header-h: 76px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #100d11;
+    --surface: #1a161c;
+    --ink: #f3eef2;
+    --muted: #a99fac;
+    --line: #2d2630;
+    --accent: #ff5a90;
+    --on-accent: #160a10;
+    --night: #08060a;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #100d11;
+  --surface: #1a161c;
+  --ink: #f3eef2;
+  --muted: #a99fac;
+  --line: #2d2630;
+  --accent: #ff5a90;
+  --on-accent: #160a10;
+  --night: #08060a;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+/* Smooth scroll to sections, stopping below the sticky header. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 12px);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 17px/1.55 var(--body);
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  margin: 0;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+/* Every layout rule below uses the page width, not the screen width. */
+.site {
+  container: site / inline-size;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

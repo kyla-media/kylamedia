@@ -1,0 +1,118 @@
+.slider {
+  --gap: 16px;
+  position: relative;
+}
+
+/* Bleeds to the page edge so side slides fade off-screen; nothing scrolls. */
+.viewport {
+  position: relative;
+  margin-inline: -40px;
+  overflow-x: clip;
+  touch-action: pan-y;
+}
+
+/* Every slide shares one grid cell and is moved out by its distance from the centre. */
+.track {
+  display: grid;
+  grid-template-columns: var(--w);
+  justify-content: center;
+}
+
+.slide {
+  grid-area: 1 / 1;
+  min-width: 0;
+  transform: translateX(calc(var(--d) * (100% + var(--gap)))) scale(var(--s, 1));
+}
+
+.slide[data-pos="side"] {
+  --s: 0.9;
+  opacity: 0.42;
+  filter: grayscale(0.85);
+  cursor: pointer;
+}
+
+.slide[data-pos="side"]:hover {
+  opacity: 0.6;
+}
+
+.slide[data-pos="out"] {
+  --s: 0.85;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.arrow {
+  position: absolute;
+  top: 38%;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 10px 24px -14px #000a;
+}
+
+.arrow[data-dir="back"] {
+  left: 40px;
+}
+
+.arrow[data-dir="next"] {
+  right: 40px;
+}
+
+.arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.arrow:hover {
+  border-color: var(--ink);
+}
+
+@container site (max-width: 760px) {
+  .viewport {
+    margin-inline: -18px;
+  }
+
+  .arrow[data-dir="back"] {
+    left: 10px;
+  }
+
+  .arrow[data-dir="next"] {
+    right: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .slide {
+    transition:
+      transform var(--t-reveal) var(--ease-io),
+      opacity var(--t-reveal) var(--ease-io),
+      filter var(--t-reveal) var(--ease-io);
+  }
+
+  .slide[data-jump="true"] {
+    transition: none;
+  }
+
+  /* Anticipation: the arrow lifts, then dips on press. */
+  .arrow {
+    transition:
+      transform var(--t-hover) var(--ease-out),
+      border-color var(--t-hover) var(--ease-out);
+  }
+
+  .arrow:hover {
+    transform: translateY(-1px);
+  }
+
+  .arrow:active {
+    transform: scale(0.94);
+    transition-duration: var(--t-press);
+  }
+}

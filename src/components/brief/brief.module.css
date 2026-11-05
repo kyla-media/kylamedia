@@ -1,0 +1,102 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 48px;
+}
+
+.grid > div {
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+
+.grid h3 {
+  font-size: 22px;
+  font-weight: 750;
+  font-stretch: 90%;
+  margin-bottom: 8px;
+}
+
+.grid p {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 32em;
+}
+
+.caps {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.cs {
+  font: 800 15px var(--display);
+  font-stretch: 85%;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.cs i {
+  font-style: normal;
+}
+
+.k {
+  background: #141016;
+  color: #fff;
+}
+
+.k i {
+  color: #ffd400;
+}
+
+.h {
+  color: #fff;
+  background: #141016;
+  text-shadow: 0 2px 0 #000;
+}
+
+.h i {
+  color: #39e46b;
+}
+
+.b {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.s {
+  font: 600 14px var(--body);
+  text-transform: none;
+  background: #000000b0;
+  color: #fff;
+}
+
+.modes {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.modes div {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--muted);
+}
+
+.modes b {
+  display: block;
+  color: var(--ink);
+}
+
+@container site (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

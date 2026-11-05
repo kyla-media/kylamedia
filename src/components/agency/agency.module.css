@@ -1,0 +1,40 @@
+.section {
+  padding-bottom: 84px;
+}
+
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px 40px;
+  padding: 30px 34px;
+  border-radius: 14px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.strip h3 {
+  font-size: 26px;
+  font-weight: 800;
+  font-stretch: 85%;
+  text-transform: uppercase;
+}
+
+.strip p {
+  color: color-mix(in srgb, var(--paper) 70%, transparent);
+  max-width: 36em;
+  margin-top: 6px;
+}
+
+.strip :global(.btn) {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+}
+
+.strip :global(.btn:hover) {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}

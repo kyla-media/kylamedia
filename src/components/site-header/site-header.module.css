@@ -1,0 +1,164 @@
+/* Sticky bar: paper-coloured glass so content reads through faintly as it scrolls under. */
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(12px);
+  -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 28px;
+  min-height: var(--header-h);
+}
+
+.logo {
+  display: block;
+  height: 40px;
+  width: auto;
+  color: var(--ink);
+}
+
+.nav {
+  display: flex;
+  gap: 26px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.nav a:hover {
+  color: var(--ink);
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Fixed 40 px square: the icon morphs, the button never changes size. */
+.menu {
+  display: none;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  padding: 0;
+  background: none;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.bars {
+  position: relative;
+  width: 18px;
+  height: 12px;
+}
+
+.bars i {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.bars i:first-child {
+  top: 0;
+}
+
+.bars i:last-child {
+  bottom: 0;
+}
+
+.menu[data-open="true"] .bars i:first-child {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.menu[data-open="true"] .bars i:last-child {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* Height animates from 0fr to 1fr, so the drawer slides open instead of popping. */
+.drawer {
+  display: none;
+  flex-basis: 100%;
+  grid-template-rows: 0fr;
+}
+
+.drawer[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.drawerInner {
+  display: grid;
+  gap: 4px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.drawerInner a {
+  padding: 10px 0;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.drawerInner a:first-child {
+  margin-top: 8px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+.drawerInner a:last-child {
+  margin-bottom: 14px;
+}
+
+@container site (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+
+  .menu,
+  .drawer {
+    display: grid;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bars i {
+    transition: transform var(--t-hover) var(--ease-io);
+  }
+
+  .drawer {
+    transition: grid-template-rows var(--t-reveal) var(--ease-io);
+  }
+
+  /* Follow-through: links settle in order after the drawer opens. */
+  .drawerInner a {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition:
+      opacity var(--t-hover) var(--ease-out),
+      transform var(--t-hover) var(--ease-out);
+  }
+
+  .drawer[data-open="true"] .drawerInner a {
+    opacity: 1;
+    transform: none;
+    transition-delay: calc(120ms + var(--i) * 40ms);
+  }
+}

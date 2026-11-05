@@ -1,0 +1,38 @@
+.list {
+  border-top: 2px solid var(--ink);
+}
+
+.list details {
+  border-bottom: 1px solid var(--line);
+}
+
+.list summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.list summary::-webkit-details-marker {
+  display: none;
+}
+
+.list summary::after {
+  content: "+";
+  font: 400 26px/1 var(--body);
+  color: var(--accent);
+}
+
+.list details[open] summary::after {
+  content: "–";
+}
+
+.list details p {
+  padding: 0 0 22px;
+  color: var(--muted);
+  max-width: 46em;
+}
