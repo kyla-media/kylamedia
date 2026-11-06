@@ -3,6 +3,8 @@ export type AdStyle = {
   line: string;
   /** Sample clip name in /public/media, if we have one. */
   sample?: string;
+  /** A full sample ad in the media bucket (folder/name), played silently until tapped. */
+  media?: string;
   /** Only Kyla Media makes this format. */
   only?: boolean;
   /** Name still to be decided. */
@@ -28,6 +30,27 @@ export const FUNNEL: FunnelStage[] = [
         sample: "selfie",
       },
       { name: "Song Ad", line: "A story, sung", sample: "song", only: true },
+      // Made by the team on Seedance before Kyla; Gabby filed all four as TOF (6 Nov).
+      {
+        name: "Bathroom Selfie",
+        line: "Pain line pinned, product late",
+        media: "tof/bathroom-selfie",
+      },
+      {
+        name: "3D Body Explainer",
+        line: "See-through body shows the cause",
+        media: "tof/3d-body",
+      },
+      {
+        name: "Close-up Talk",
+        line: "Face to camera, myth busted first",
+        media: "tof/close-up-talk",
+      },
+      {
+        name: "Tabletop Explainer",
+        line: "Each point gets its own props",
+        media: "tof/tabletop-explainer",
+      },
       { name: "Podcast Cut", line: "Two hosts talk it through" },
       { name: "Fashion · OOTD", line: "Moves, fabric close-up, second colour" },
       { name: "Fashion · Mirror", line: "Three quick mirror cuts" },

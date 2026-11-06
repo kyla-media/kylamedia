@@ -1,5 +1,6 @@
 import type { AdStyle } from "@/content/styles";
 
+import { SampleAd } from "./SampleAd";
 import styles from "./rails.module.css";
 
 type Props = { style: AdStyle; tag: string };
@@ -9,7 +10,9 @@ export function StyleCard({ style, tag }: Props) {
   return (
     <div className={styles.card}>
       <div className="phone-v">
-        {style.sample ? (
+        {style.media ? (
+          <SampleAd media={style.media} name={style.name} />
+        ) : style.sample ? (
           <video
             src={`/media/${style.sample}.mp4`}
             poster={`/media/${style.sample}.jpg`}

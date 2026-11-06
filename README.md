@@ -48,3 +48,20 @@ pnpm format       # Prettier, same settings as kylastudio
 `components/slider/Slider` is the shared carousel. The active slide is centred and the others are greyed. It
 loops, has arrows and worm dots, and supports swipe and arrow keys. It never moves on its own, and it plays only
 the active slide's video.
+
+## Sample videos (R2)
+
+Sample ads live in the site's Cloudflare R2 bucket, served from `NEXT_PUBLIC_MEDIA_URL`
+(default `https://media.kylamedia.com`). They are not in the repo.
+
+Each ad becomes three files: a silent hook loop that plays on the page (a few hundred KB),
+a still, and the full ad with sound, which only loads when someone taps "Watch with sound".
+
+To add one:
+
+1. `node scripts/media/prep.mjs <ad.mp4> tof/<name>` (use `mof/` or `bof/` for other stages;
+   an optional third argument sets the preview length in seconds, default 7)
+2. `node --env-file=.env.local scripts/media/upload.mjs` (needs the `R2_*` keys in `.env.local`)
+3. Add the style in `src/content/styles.ts` with `media: "tof/<name>"`.
+
+Files are cached for a year, so give a new cut a new name instead of replacing a file.
