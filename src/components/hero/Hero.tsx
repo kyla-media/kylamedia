@@ -1,4 +1,4 @@
-import { HERO_REEL, HERO_SPECS } from "@/content/hero";
+import { HERO_REEL } from "@/content/hero";
 
 import { HeroReel } from "./HeroReel";
 import { HeroTitle } from "./HeroTitle";
@@ -15,12 +15,10 @@ export function Hero() {
           highlight="customers"
           after="made them"
         />
+        {/* Short on purpose (6 Nov): the videos carry the hero, so the words stay out of their way. */}
         <p className={styles.lede}>
-          We write, cast and deliver AI UGC video ads for TikTok, Instagram
-          Reels and YouTube Shorts.{" "}
-          <b>Every creator is an AI character built around your buyer</b>, every
-          script is approved by you before we film, and every caption is synced
-          to the voice word by word.
+          Scroll-stopping ads for TikTok, Reels and Shorts, starring{" "}
+          <b>AI creators built around your buyer</b>.
         </p>
         <div className={styles.ctas}>
           <a className="btn" href="#contact">
@@ -30,13 +28,6 @@ export function Hero() {
             See the ad styles
           </a>
         </div>
-        <ul className={styles.specs}>
-          {HERO_SPECS.map((s) => (
-            <li key={s.value}>
-              <b>{s.value}</b> {s.text}
-            </li>
-          ))}
-        </ul>
       </div>
       <HeroReel clips={HERO_REEL} />
     </section>

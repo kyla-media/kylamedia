@@ -13,7 +13,7 @@ export const PLANS: Plan[] = [
     videos: "videos, top of funnel",
     items: [
       "1 creator built for your buyer",
-      "Scripts approved by you",
+      "Hooks and scripts written for you",
       "Captions and music",
     ],
   },

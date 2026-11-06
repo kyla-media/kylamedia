@@ -6,8 +6,8 @@ export const FAQ: FaqItem[] = [
     a: "No. Every creator is an AI character we design for your brand. We never present them as real customers, and we label them as AI wherever a platform asks.",
   },
   {
-    q: "Will I see the scripts before you make the videos?",
-    a: "Yes. Nothing is made until you approve the script. You can edit a line or reject a script entirely.",
+    q: "Who writes the scripts?",
+    a: "We do. Every hook and script is written around your buyer, using only the claims your product can back up.",
   },
   {
     q: "What claims will the videos make?",

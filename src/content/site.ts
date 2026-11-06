@@ -8,7 +8,7 @@ export const SITE = {
   email: "hello@kylamedia.com",
   title: "AI UGC Ad Agency for TikTok, Reels & Shorts",
   description:
-    "Kyla Media makes AI UGC video ads for TikTok, Instagram Reels and YouTube Shorts. AI creators built around your buyer, scripts you approve, every funnel stage.",
+    "Kyla Media makes AI UGC video ads for TikTok, Instagram Reels and YouTube Shorts. AI creators built around your buyer, for every stage of the funnel.",
   ogAlt:
     "Kyla Media: ads that look like your customers made them. AI UGC video ads for every stage of the funnel.",
 } as const;

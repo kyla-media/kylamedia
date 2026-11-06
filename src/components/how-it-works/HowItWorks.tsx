@@ -12,8 +12,7 @@ export function HowItWorks() {
           kicker="How it works"
           title="From product page to posted ad"
         >
-          You make two decisions: who you sell to, and which scripts go ahead.
-          We do the rest.
+          Tell us who you sell to. We do the rest.
         </SectionHead>
         <ol className={styles.steps}>
           {STEPS.map((s) => (

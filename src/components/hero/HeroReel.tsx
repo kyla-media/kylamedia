@@ -20,7 +20,7 @@ export function HeroReel({ clips }: Props) {
 
   return (
     <div className={styles.phoneReel}>
-      <Slider label="Sample ads" width="64%" names={clips.map((c) => c.name)}>
+      <Slider label="Sample ads" width="80%" names={clips.map((c) => c.name)}>
         {clips.map((c) => (
           <ReelFigure key={c.video} clip={c} />
         ))}

@@ -1,13 +1,14 @@
+/* The videos are the focus (6 Nov): people watch before they read, so the reel takes the wider column. */
 .hero {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 48px;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  gap: 44px;
   align-items: center;
   padding-block: 56px 72px;
 }
 
 .title {
-  font-size: clamp(44px, 6.4cqi, 84px);
+  font-size: clamp(38px, 4.5cqi, 64px);
   line-height: 0.98;
   font-weight: 850;
   font-stretch: 82%;
@@ -31,9 +32,9 @@
 }
 
 .lede {
-  margin-top: 24px;
-  font-size: 19px;
-  max-width: 34em;
+  margin-top: 22px;
+  font-size: 20px;
+  max-width: 24em;
   color: var(--muted);
 }
 
@@ -47,24 +48,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-}
-
-.specs {
-  margin: 34px 0 0;
-  padding: 16px 0 0;
-  border-top: 1px solid var(--line);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 26px;
-  list-style: none;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.specs b {
-  color: var(--ink);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
 }
 
 .reel {

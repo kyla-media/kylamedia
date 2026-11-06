@@ -7,12 +7,6 @@ export type ReelClip = {
   note: string;
 };
 
-export const HERO_SPECS = [
-  { value: "9:16", text: "for TikTok, Reels and Shorts" },
-  { value: "15–80 s", text: "per video" },
-  { value: "17", text: "styles across the funnel" },
-];
-
 export const HERO_REEL: ReelClip[] = [
   {
     video: "/media/selfie.mp4",

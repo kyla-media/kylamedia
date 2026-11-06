@@ -21,8 +21,8 @@ export const STEPS: Step[] = [
     text: "We build a character around your buyer and show you their look before anything is filmed.",
   },
   {
-    title: "Approve the scripts",
-    text: "Hooks and scripts for each stage come to you first. Change a word or reject one outright.",
+    title: "We write and film",
+    text: "We write the hooks and scripts for each funnel stage and film every video with your creator.",
   },
   {
     title: "Get your batch",
@@ -34,7 +34,7 @@ export const STEPS: Step[] = [
 export const COMPARISON = [
   [
     "Getting started",
-    "Send a link, approve scripts",
+    "Send us a product link",
     "Brief, cast, ship product, wait for filming",
   ],
   ["Changing a line", "We re-make that part", "Usually a reshoot"],
