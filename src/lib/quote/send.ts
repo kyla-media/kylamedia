@@ -40,7 +40,10 @@ export async function deliverQuote(quote: {
   email: string;
 }) {
   const inbox = process.env.QUOTE_TO ?? "hello@kylamedia.com";
-  const board = process.env.TRELLO_LEADS_EMAIL;
+  // Trello's copy button gives "Board name <address>"; only the address is needed.
+  const board =
+    process.env.TRELLO_LEADS_EMAIL?.match(/<([^>]+)>/)?.[1] ??
+    process.env.TRELLO_LEADS_EMAIL?.trim();
   const [mail, card] = await Promise.allSettled([
     sendEmail({ to: inbox, ...quote, replyTo: quote.email }),
     board ? sendEmail({ to: board, ...quote }) : Promise.resolve(),
