@@ -11,23 +11,23 @@ export const BUYER_TYPE_TOTAL = "141 buyer types already built";
 
 export type Step = { title: string; text: string; tbc?: string };
 
+/** Gabby's outline (6 Nov): they tell us what they need, we build a custom plan, make it fast, and improve it. */
 export const STEPS: Step[] = [
   {
-    title: "Send your product page",
-    text: "We read the listing and photos and note only the claims your page can back up.",
+    title: "Tell us what you need",
+    text: "Send us your product, your audience and your goals. We reply within one business day.",
   },
   {
-    title: "Meet your creator",
-    text: "We build a character around your buyer and show you their look before anything is filmed.",
+    title: "Get a custom ad plan",
+    text: "We tailor every part to your brand: the funnel stages, frameworks, scripts, AI creators, video lengths and how many videos.",
   },
   {
-    title: "We write and film",
-    text: "We write the hooks and scripts for each funnel stage and film every video with your creator.",
+    title: "Get your videos, fast",
+    text: "Finished ads with captions, music and your call to action, ready to post. Competitive pricing and a quick turnaround.",
   },
   {
-    title: "Get your batch",
-    text: "Finished videos with captions, music and your call to action, ready to post, in",
-    tbc: "[x] days",
+    title: "Watch them get better",
+    text: "We look at how your videos perform and double down on what works for your audience, so every batch beats the last.",
   },
 ];
 

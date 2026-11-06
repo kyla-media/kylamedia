@@ -10,9 +10,9 @@ export function HowItWorks() {
         <SectionHead
           id="h-how"
           kicker="How it works"
-          title="From product page to posted ad"
+          title="An ad plan built around your brand"
         >
-          Tell us who you sell to. We do the rest.
+          You tell us what you need. We plan, make and improve the ads.
         </SectionHead>
         <ol className={styles.steps}>
           {STEPS.map((s) => (
