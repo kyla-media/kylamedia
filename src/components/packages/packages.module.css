@@ -14,39 +14,11 @@
   gap: 18px;
 }
 
-.pick {
-  border: 2px solid var(--ink);
-}
-
 .plan h3 {
   font-size: 30px;
   font-weight: 850;
   font-stretch: 80%;
   text-transform: uppercase;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-
-.plan h3 small {
-  font: 700 11px var(--body);
-  letter-spacing: 0.06em;
-  color: var(--on-accent);
-  background: var(--accent);
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-.price {
-  font: 800 34px var(--display);
-  font-stretch: 85%;
-  font-variant-numeric: tabular-nums;
-}
-
-.price span:last-child {
-  font: 500 15px var(--body);
-  color: var(--muted);
 }
 
 .plan ul {

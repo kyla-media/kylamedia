@@ -3,23 +3,32 @@
 import { useRef, useState } from "react";
 
 import { NEEDS, SPEND_OPTIONS } from "@/content/faq";
+import { collectQuote, postQuote } from "@/lib/quote/collect";
 
+import { PackageField } from "./PackageField";
 import { SentNotice } from "./SentNotice";
 import styles from "./contact.module.css";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-/** Not wired to a backend yet: a valid submit shows the sent state only. */
+/** A quote request: sent to /api/quote, which emails the inbox and the Trello Leads list. */
 export function ContactForm() {
   const email = useRef<HTMLInputElement>(null);
   const [bad, setBad] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [failed, setFailed] = useState("");
   const [sent, setSent] = useState(false);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const ok = EMAIL.test(email.current?.value.trim() ?? "");
     setBad(!ok);
     if (!ok) return email.current?.focus();
+    setSending(true);
+    setFailed("");
+    const error = await postQuote(collectQuote(e.currentTarget));
+    setSending(false);
+    if (error) return setFailed(error);
     setSent(true);
   };
 
@@ -27,6 +36,7 @@ export function ContactForm() {
 
   return (
     <form className={styles.form} noValidate onSubmit={submit}>
+      <PackageField />
       <div className={styles.field}>
         <label htmlFor="c-name">Your name</label>
         <input id="c-name" name="name" autoComplete="name" />
@@ -74,10 +84,23 @@ export function ContactForm() {
         <label htmlFor="c-msg">Anything else</label>
         <textarea id="c-msg" name="msg" rows={3} />
       </div>
+      {/* A trap for bots: hidden from people and screen readers. */}
+      <input
+        className={styles.trap}
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
       <div className={styles.wide}>
-        <button className="btn" type="submit">
-          Send
+        <button className="btn" type="submit" disabled={sending}>
+          {sending ? "Sending…" : "Get my quote"}
         </button>
+        {failed && (
+          <p className={styles.err} role="alert">
+            {failed}
+          </p>
+        )}
       </div>
     </form>
   );

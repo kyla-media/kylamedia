@@ -1,33 +1,21 @@
 import type { Plan } from "@/content/plans";
 
+import { QuoteLink } from "./QuoteLink";
 import styles from "./packages.module.css";
 
 type Props = { plan: Plan };
 
-/** Prices and video counts are placeholders until pricing is agreed. */
+/** No price on the card: every package is quoted to the brand. */
 export function PlanCard({ plan }: Props) {
   return (
-    <div
-      className={`${styles.plan} ${plan.pick ? styles.pick : ""}`}
-      data-rv=""
-    >
-      <h3>
-        {plan.name} {plan.pick && <small>Recommended</small>}
-      </h3>
-      <div className={styles.price}>
-        <span className="tbc">$—</span> <span>per batch</span>
-      </div>
+    <div className={styles.plan} data-rv="">
+      <h3>{plan.name}</h3>
       <ul>
-        <li>
-          <span className="tbc">[x]</span> {plan.videos}
-        </li>
         {plan.items.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
-      <a className={`btn ${plan.pick ? "" : "ghost"}`} href="#contact">
-        Book a call
-      </a>
+      <QuoteLink className="btn ghost" packageId={plan.id} />
     </div>
   );
 }

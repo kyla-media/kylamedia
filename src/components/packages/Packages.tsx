@@ -13,9 +13,13 @@ export function Packages() {
       data-reveal
     >
       <div className="wrap">
-        <SectionHead id="h-plans" kicker="Packages" title="Pick a batch size">
-          No retainer and no minimum term. Buy one batch, see how it runs, then
-          order the next.
+        <SectionHead
+          id="h-plans"
+          kicker="Packages"
+          title="Custom pricing for every brand"
+        >
+          Every brand is different. Pick the package closest to what you need
+          and we&apos;ll send you a custom quote.
         </SectionHead>
         <div className={styles.plans}>
           {PLANS.map((p) => (
@@ -23,7 +27,8 @@ export function Packages() {
           ))}
         </div>
         <p className={styles.note}>
-          Need more than Expert? Ask about bulk pricing on a call.
+          Need something different? Tell us in the form and we&apos;ll build a
+          package around it.
         </p>
       </div>
     </section>

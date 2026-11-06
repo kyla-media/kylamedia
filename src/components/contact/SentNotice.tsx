@@ -17,7 +17,9 @@ export function SentNotice() {
         </svg>
         Thanks, we have your details
       </h3>
-      <p>We&apos;ll be in touch soon with a time for a short call.</p>
+      <p>
+        We&apos;ll reply soon with a custom quote, or a time for a short call.
+      </p>
     </div>
   );
 }
