@@ -16,7 +16,6 @@ export const FAQ: FaqItem[] = [
   {
     q: "Who owns the finished videos?",
     a: "You do. Run them as organic posts, paid ads or Spark Ads, on any platform.",
-    tbc: "Terms to confirm.",
   },
   {
     q: "What do you need from me?",
@@ -25,7 +24,6 @@ export const FAQ: FaqItem[] = [
   {
     q: "What if a video isn't right?",
     a: "Tell us what to change and we'll redo it.",
-    tbc: "[x] revisions per video are included.",
   },
 ];
 
