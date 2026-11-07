@@ -51,7 +51,7 @@ export const FUNNEL: FunnelStage[] = [
         line: "Each point gets its own props",
         media: "tof/tabletop-explainer",
       },
-      // Samples from Jon's Affiliate Gateway portfolio, made with his bots, until Kyla makes its own (7 Nov).
+      // Samples from Jon's Affiliate Gateway portfolio, made with his bots and shown with his okay, until Kyla makes its own (7 Nov).
       {
         name: "Podcast Cut",
         line: "Two hosts talk it through",
@@ -88,11 +88,28 @@ export const FUNNEL: FunnelStage[] = [
     code: "MOF",
     name: "Middle of funnel",
     job: "Builds trust with how it works, a real story and proof.",
+    // MOF and BOF samples are from Jon's Affiliate Gateway portfolio, shown with his okay (7 Nov).
     styles: [
-      { name: "Product Demo", line: "Hands-on, ingredients called out" },
-      { name: "Unboxing", line: "Every item out, one by one" },
-      { name: "Results Story", line: "Before-and-after, told to camera" },
-      { name: "Green Screen", line: "Creator over product B-roll" },
+      {
+        name: "Product Demo",
+        line: "Hands-on, ingredients called out",
+        media: "mof/product-demo",
+      },
+      {
+        name: "Unboxing",
+        line: "Every item out, one by one",
+        media: "mof/unboxing",
+      },
+      {
+        name: "Results Story",
+        line: "Before-and-after, told to camera",
+        media: "mof/results-story",
+      },
+      {
+        name: "Green Screen",
+        line: "Creator over product B-roll",
+        media: "mof/green-screen",
+      },
     ],
   },
   {
@@ -100,16 +117,37 @@ export const FUNNEL: FunnelStage[] = [
     name: "Bottom of funnel",
     job: "Product-first videos that turn interest into orders.",
     styles: [
-      { name: "Arc Camera", line: "Camera circles the product" },
-      { name: "Panel Zoom", line: "Each setting eases closer" },
-      { name: "Long Text", line: "One text block carries the pitch" },
+      {
+        name: "Arc Camera",
+        line: "Camera circles the product",
+        media: "bof/arc-camera",
+      },
+      {
+        name: "Panel Zoom",
+        line: "Each setting eases closer",
+        media: "bof/panel-zoom",
+      },
+      {
+        name: "Long Text",
+        line: "One text block carries the pitch",
+        media: "bof/long-text",
+      },
       {
         name: "Warehouse Find",
         line: "Stacked high on a store pallet",
         tbc: true,
+        media: "bof/warehouse-find",
       },
-      { name: "Percentages", line: "Old price struck, discount in red" },
-      { name: "Insecurity", line: "The worry first, then the fix" },
+      {
+        name: "Percentages",
+        line: "Old price struck, discount in red",
+        media: "bof/percentages",
+      },
+      {
+        name: "Insecurity",
+        line: "The worry first, then the fix",
+        media: "bof/insecurity",
+      },
     ],
   },
 ];
