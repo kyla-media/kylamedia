@@ -51,12 +51,37 @@ export const FUNNEL: FunnelStage[] = [
         line: "Each point gets its own props",
         media: "tof/tabletop-explainer",
       },
-      { name: "Podcast Cut", line: "Two hosts talk it through" },
-      { name: "Fashion · OOTD", line: "Moves, fabric close-up, second colour" },
-      { name: "Fashion · Mirror", line: "Three quick mirror cuts" },
-      { name: "Fashion · Car seat", line: "Seated in the car, then standing" },
-      { name: "Fashion · Try-on", line: "Fit check, ends folded on a bed" },
-      { name: "Fashion · Shoes", line: "Every angle, then worn" },
+      // Samples from Jon's Affiliate Gateway portfolio, made with his bots, until Kyla makes its own (7 Nov).
+      {
+        name: "Podcast Cut",
+        line: "Two hosts talk it through",
+        media: "tof/podcast-cut",
+      },
+      {
+        name: "Fashion · OOTD",
+        line: "Moves, fabric close-up, second colour",
+        media: "tof/fashion-ootd",
+      },
+      {
+        name: "Fashion · Mirror",
+        line: "Three quick mirror cuts",
+        media: "tof/fashion-mirror",
+      },
+      {
+        name: "Fashion · Car seat",
+        line: "Seated in the car, then standing",
+        media: "tof/fashion-car-seat",
+      },
+      {
+        name: "Fashion · Try-on",
+        line: "Fit check, ends folded on a bed",
+        media: "tof/fashion-try-on",
+      },
+      {
+        name: "Fashion · Shoes",
+        line: "Every angle, then worn",
+        media: "tof/fashion-shoes",
+      },
     ],
   },
   {
