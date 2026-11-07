@@ -57,16 +57,7 @@ export const FUNNEL: FunnelStage[] = [
         line: "Two hosts talk it through",
         media: "tof/podcast-cut",
       },
-      {
-        name: "Fashion · OOTD",
-        line: "Moves, fabric close-up, second colour",
-        media: "tof/fashion-ootd",
-      },
-      {
-        name: "Fashion · Mirror",
-        line: "Three quick mirror cuts",
-        media: "tof/fashion-mirror",
-      },
+      // Gabby (7 Nov): OOTD, Mirror and Shoes aren't top of funnel, so they're off the site.
       {
         name: "Fashion · Car seat",
         line: "Seated in the car, then standing",
@@ -76,11 +67,6 @@ export const FUNNEL: FunnelStage[] = [
         name: "Fashion · Try-on",
         line: "Fit check, ends folded on a bed",
         media: "tof/fashion-try-on",
-      },
-      {
-        name: "Fashion · Shoes",
-        line: "Every angle, then worn",
-        media: "tof/fashion-shoes",
       },
     ],
   },

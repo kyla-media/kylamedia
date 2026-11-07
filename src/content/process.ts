@@ -4,7 +4,7 @@ export const BUYER_TYPES = [
   "The Sharp-at-Fifty Dad",
   "The Car-Line Nurse Mom",
   "The Meal-Prep Lifter",
-  "The Senior-Cat Faucet Mom",
+  "The Beach-Day Mom",
 ];
 
 export const BUYER_TYPE_TOTAL = "141 buyer types already built";
