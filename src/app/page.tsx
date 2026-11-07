@@ -7,6 +7,7 @@ import { Faq } from "@/components/faq/Faq";
 import { Hero } from "@/components/hero/Hero";
 import { HowItWorks } from "@/components/how-it-works/HowItWorks";
 import { Packages } from "@/components/packages/Packages";
+import { Scripting } from "@/components/scripting/Scripting";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { HOME_JSON_LD } from "@/components/seo/structured-data";
 import { SiteFooter } from "@/components/site-footer/SiteFooter";
@@ -24,6 +25,7 @@ export default function Home() {
         <StyleRails />
         <SongBand />
         <Creators />
+        <Scripting />
         <HowItWorks />
         <Comparison />
         <Brief />
